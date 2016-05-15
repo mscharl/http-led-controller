@@ -18,7 +18,14 @@ module.exports = function(myApp) {
         if (leds.length > 0) {
             for (var i = leds.length - 1; i >= 0; i--) {
                 var s = leds[i].serial;
-                leds[i].setInverse(true);
+
+                if(myApp.config.BLINKSTICK_USE_INVERSE === true) {
+                    leds[i].setInverse(true);
+                }
+                if(myApp.config.BLINKSTICK_USE_MODE === 0 || myApp.config.BLINKSTICK_USE_MODE === 1 || myApp.config.BLINKSTICK_USE_MODE === 2) {
+                    leds[i].setMode(myApp.config.BLINKSTICK_USE_MODE);
+                }
+
                 serial[s] = leds[i];
             }
 

@@ -1,3 +1,5 @@
 {
-    "PORT": 80
+    "PORT": 8080,
+    "BLINKSTICK_USE_INVERSE": false,
+    "BLINKSTICK_USE_MODE": 1
 }
